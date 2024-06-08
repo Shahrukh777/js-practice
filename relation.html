@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UwU</title>
+</head>
+<body style="background-color: black; color:bisque;">
+    <div class="parent">
+        <div id="aa">Janauary</div>
+        <div class="day">February</div>
+        <div class="day">March</div>
+        <div class="day">April</div>
+        <div class="day">May</div>
+        <div class="day">June</div>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent');
+        const x = document.querySelector('#aa')
+        console.log(x)
+        console.log(parent)
+        console.log(parent.children)  // HTMLCollection
+        console.log(parent.children[5])
+
+        for(let i = 0; i<= parent.children.length; i++){
+            console.log(parent.children[i])
+        }
+        parent.children[0].style.color = "red";
+        const One = document.querySelector('.day')
+        console.log(parent.firstElementChild.innerHTML)
+        console.log(parent.lastElementChild.innerHTML)
+        const dayOne = document.querySelector('.day')  // SELECTS FRIST MATCHING ELEMENT/VALUE
+        console.log(dayOne.innerHTML)
+        console.log(dayOne.parentElement)    // GIVES PARENT
+        console.log(dayOne.nextElementSibling)
+
+        console.log("Nodes: ", parent.childNodes)
+         
+    </script>
+</body>
+</html>
