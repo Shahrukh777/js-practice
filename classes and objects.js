@@ -1,3 +1,6 @@
+
+
+// class.html req
 // Objects
 
 const student =  {
@@ -35,6 +38,85 @@ rukh.__proto__ = emp;
 
 // -----------------
 
-// CLASSES
+// CLASSES  (USED WHEN - SIMILAR OBJECTS IN BULK)
+
+// has state and behaviour
+
+class car{
+    start(){
+        console.log("Start")
+    }
+
+    stop(){
+        console.log("Stop")
+    }
+
+    setBrand(brand){
+        this.brandName = brand
+    }
+}
+
+// creating an object from through class
+
+let audi = new car(); //can access the methods from class
+audi.setBrand("audi")
+
+let lexus = new car();
+lexus.setBrand("lexus")
+
+// Constructor (automatically invoked by new) *** It is called as soon as an object is created using respective class
+
+class con{
+    constructor(name){
+        console.log("Construstor is created")
+        this.name = name;
+    }
+}
+let obj = new con("Shahrukh");   // will call the constructor
+console.log(obj)
+
+// INHERETANCE
+
+class parent{
+    parentMethod(){
+        console.log("This is a parent method.")
+    }
+}
+
+class child extends parent{
+    childMethod(){
+        console.log("This is a child method.")
+    }
+}
+
+let cobj = new child();  // will have access to parent class methods
 
 
+// super keyword
+
+class Person{
+    constructor(){
+        console.log("Parent constructor")
+        this.eng = "person UwU"
+    }
+    eat(){
+        console.log("Eating...")
+    }
+    work(){
+        console.log("Do nothing...")
+    }
+}
+class Eng extends Person{
+    constructor(){
+        super();                // INVOKE PARENT CLASS CONSTRUCTOR
+        console.log("Child constructor")
+        this.eng = "Engineer"
+        console.log("Exit child constructor")
+    }
+    work(){
+        console.log("Working...")      // Overriding
+    }
+}   
+
+let p1 = new Person();
+let e1 = new Eng();
